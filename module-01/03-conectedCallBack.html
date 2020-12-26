@@ -8,23 +8,18 @@
       Fundamentals
     </title>
 
-    <!-----Let's create our own DOM element------>
     <script>
       class MyCustomElement extends HTMLElement {
         constructor() {
           super();
           console.log('My Custom Element constructed!');
         }
-        connectedCall;
-        ack() {
-          console.log('My Custom Element added to the DOM!');
-        }
-        static get observedAttributes() {
-          return ['demo'];
-          attributeChangedCallBalk(name, oldValue, newValue);
-          console.log('Attribute Changed', name, oldValue, newValue);
+        // 2nd Callback
+        attributeChangedCallback() {
+          console.log('');
         }
       }
+
       window.customElements.define('my-custom-element', MyCustomElement);
     </script>
   </head>
