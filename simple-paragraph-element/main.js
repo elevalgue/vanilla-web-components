@@ -1,0 +1,1 @@
+let p = document.getElementById('simple-p');

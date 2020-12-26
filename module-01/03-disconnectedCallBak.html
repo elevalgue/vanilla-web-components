@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      A Practical Guide to Vanilla Web Components: Module 1 - Web Component
+      Fundamentals
+    </title>
+
+    <!-----Let's create our own DOM element------>
+    <script>
+      class MyCustomElement extends HTMLElement {
+        constructor() {
+          super();
+          console.log('My Custom Element constructed!');
+        }
+        connectedCall;
+        ack() {
+          console.log('My Custom Element added to the DOM!');
+        }
+        static get observedAttributes() {
+          return ['demo'];
+          attributeChangedCallBalk(name, oldValue, newValue);
+          console.log('Attribute Changed', name, oldValue, newValue);
+        }
+      }
+      window.customElements.define('my-custom-element', MyCustomElement);
+    </script>
+  </head>
+
+  <body>
+    <my-custom-element></my-custom-element>
+  </body>
+</html>
