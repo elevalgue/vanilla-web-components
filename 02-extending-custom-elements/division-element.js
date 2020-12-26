@@ -3,3 +3,5 @@ class DivisonElement extends HTMLElement{
         console.log(parseInt(value)/10);
     }
 }
+
+window.customElements.define('do-division', DivisonElement); 
