@@ -7,8 +7,37 @@
       A Practical Guide to Vanilla Web Components: Module 1 - Web Components
       Fundamentals
     </title>
-    <!-- Include custom element v1 polyfill -->
+
+    <!-- 1. Include custom element v1 polyfill -->
     <script src="document-register-element.js"></script>
+
+    <script>
+      class CustomAnchor extends HTMLAnchorElement {
+        connectedCallBack() {
+          this.addEventListener('click', (ev) => {
+            // 2. We want to ask the user if they're sure that they want to navigate to that link.
+
+            // 3. We need to add an EventListener to the element so we can detect when they've clicked on it.
+
+            ev.preventDefault();
+
+            // 4. The first thing we'll do in this event handler, is to use the preventDefault method on the event, because we don't want the user to be automatically navigated to that link.
+
+            // 5. We want to ask them if they're sure first. To ask, we're going to use this js confirm message
+
+            const result = confirm(
+              'Estás segura de que quieres dejar mi página para navegar por San Google?'
+            );
+            if (result) {
+              window.location.href = ev.target.href;
+            }
+          });
+        }
+      }
+      window.customElements.define('custom-anchor', CustomAnchor, {
+        extends: 'a',
+      });
+    </script>
   </head>
 
   <body>
