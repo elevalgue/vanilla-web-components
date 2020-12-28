@@ -29,6 +29,7 @@
       $div.attachShadow({ mode: 'open' });
 
       // 5. For the shadow root created for this element we'll go ahead and add some content to it and get the benefits of its encapsulation.
+
       // 6. By using the shadow root property, we can get direct access to the shadow we just attached to this element, and we can interact with that in the normal way we would with the element, such as using an append child or in a HTML.
 
       $div.shadowRoot.innerHTML = `
@@ -37,7 +38,13 @@
                 color: blue;
             }
         </style>
-        <p>Paragraph text within the Shadow DOM!</P>`;
+        <p>Paragraph text within the Shadow DOM!</p>`;
+
+      // So with the benefits of the Shadow DOM encapsulation, because we've added our new paragraph tag to the Shadow DOM and it isn't affected by the starting of the outer application, we should otherwise set it's color to red. Instead, it's color blue, because we added some additional styling to the Shadow DOM, which it will still inherit because it's part of the encapsulated context. Aditionally the other paragraph elements in the page are not affected  by this new styling because the styling inside the Shadow DOM will not leak out into tht outer application.
+
+      // These encapsulation capabilities are so significant because we can utilize this functionality in our web components. With this functionality we cab be sure that when users add our component to their applications, the look and feel of our components isn't going to be broken by any styling they added in their application.
+
+      // Equally we can be confident that anything we added in our component isn't goinf to affect their application.
     </script>
   </body>
 </html>
