@@ -7,8 +7,30 @@
       Practical Guide to Vanilla Web Components: Module 1 - Web Component
       Fundamentals * Using HTML imports
     </title>
+
+    <!-- This way we're including the other HTML file -->
+    <!-- We're giving it an ID so we can refetence it later -->
+
+    <link rel="import" href="notice.html" id="notice" />
   </head>
+
   <body>
     <!-- In this demo we'll see how to import a HTML document, and also how to access the contents of the document from JavaScript -->
+    <!-- 
+    <script>
+      // 2. Let's import the content of "notice.html" and make them available to us by selecting the link we've just added
+
+      const $link = document.getElementById('notice');
+
+      // 3. Get the content of that import
+      const content = $link.import.querySelector('.notice-frame');
+
+      // 4. Grab the notice frame and add the entirety of the notice frame to the body of index.html
+      document.body.appendChild(content.cloneNode(true));
+
+      // 5. Now if we open the browser we'll see that the contents of notice.html has been added to the main document
+    </script> -->
+
+    <script type="javascript/text" src="main.js"></script>
   </body>
 </html>
