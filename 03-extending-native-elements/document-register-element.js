@@ -455,7 +455,7 @@ if (IE8) {
         }
         }
     };
-      callDOMAttrModified = function (
+    callDOMAttrModified = function (
         attrChange,
         currentTarget,
         attrName,
@@ -726,7 +726,7 @@ return -1 < query.indexOf(name + '[is="' + type + '"]');
 }
 
 function onDOMAttrModified(e) {
-  var
+var
     node = e.currentTarget,
     attrChange = e.attrChange,
     attrName = e.attrName,
@@ -808,7 +808,7 @@ if (node[CREATED_CALLBACK] && notFromInnerHTMLHelper) {
     node.created = true;
     node[CREATED_CALLBACK]();
     node.created = false;
-  }
+}
 }
 
 function purge() {
