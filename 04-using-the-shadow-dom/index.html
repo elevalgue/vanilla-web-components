@@ -17,5 +17,27 @@
     <p>Paragraph text in the outer application.</p>
     <div id="simple-div"></div>
     <p>Some more paragraph text in the outer application.</p>
+    <!-- 1. Let's attach the Shadow root or Shadow DOM to the "div" element -->
+    <script>
+      // 2. We're just selecting it by using "document.getElementByID" method
+      let $div = document.getElementById('simple-div');
+
+      // 3. To create a shadow group for this element, we just use the "attachShadow" method
+
+      // 4. Then we'll provide an object with a mode property with value of open.
+      // Open mode will allow us to manipulate the contents of the shadow root freely.
+      $div.attachShadow({ mode: 'open' });
+
+      // 5. For the shadow root created for this element we'll go ahead and add some content to it and get the benefits of its encapsulation.
+      // 6. By using the shadow root property, we can get direct access to the shadow we just attached to this element, and we can interact with that in the normal way we would with the element, such as using an append child or in a HTML.
+
+      $div.shadowRoot.innerHTML = `
+        <style>
+            p{
+                color: blue;
+            }
+        </style>
+        <p>Paragraph text within the Shadow DOM!</P>`;
+    </script>
   </body>
 </html>
