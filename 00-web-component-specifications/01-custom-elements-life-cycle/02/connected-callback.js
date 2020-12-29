@@ -15,8 +15,8 @@ class MyCustomElement extends HTMLElement {
     // which allows us to subscribe to changes of certain attributes on element instance. To configure what attributes we want to subscribe to, we must specify the names os these attributes,
 
     // 3. Using the static observed attributes get method, by providing an array of these names.
-
     static get observedAttributes() {
+        
       // 4. For this example examlple, we'll only subscribe to changes for the demo attribute
       return ['demo'];
     }
