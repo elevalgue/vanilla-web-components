@@ -24,7 +24,6 @@ class RwRandomQuote extends HTMLElement {
     }
 
     // 6. Let's go with the connectedCallback method to stamp the component with our initial template.
-
     connectedCallback() {
 
         // 7. Here, we're displaying a title and providing an element to display que quote text, as well as added some basic styles, because We're not using the shadow DOM for its encapsulation in this component, we'll need to prefix the class names to limit the chance of a conflict. With the initial template added.
