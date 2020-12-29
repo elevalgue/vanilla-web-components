@@ -25,11 +25,11 @@ class RwRandomQuote extends HTMLElement {
         this._interval = null; 
     }
 
-    // 6. Let's go with the connectedCallback method to stamo the component with our initial template.
+    // 6. Let's go with the connectedCallback method to stamp the component with our initial template.
 
     connectedCallback() {
 
-        // 7. Here we're displaying a title and providing an element to display que quote text, as well as added some basic styles, because We're not using the shadow DOM for its encapsulation in this component, we'll need to prefix the class names to limit the chance of a conflict. With the initial template added, I'll pull the reference to the quote element out and configure the template added
+        // 7. Here, we're displaying a title and providing an element to display que quote text, as well as added some basic styles, because We're not using the shadow DOM for its encapsulation in this component, we'll need to prefix the class names to limit the chance of a conflict. With the initial template added.
         this.innerHTML = `
             <style>
                 .rw-container {
@@ -48,18 +48,35 @@ class RwRandomQuote extends HTMLElement {
                 <p>"<span id="quote"></span>"</p>
             </div>
         `;
+
+        // 8. I'll pull the reference to the quote element out and configure interval
         this._$quote = this.querySelector('#quote');
+
+        // 9. The set interval function will call a random method which we haven't created yet. 
         this._interval = setInterval(() => this._render(), 10000);
+
+        // 10. With the interval configured, we'll also need to initially call the render method
         this._render();
     }
+
+    // 11. Let's move on and create the random method 
+    // The random method is a custom method on our class
     _render() {
+
+        // 12. We will prefix with an underscore identifying it as a private method that it shouldn't be used externally.  
         if (this._$quote !== null) {
-            this._$quote.innerHTML = this._$quote[Math.floor(Math.random() * this._$quote.length)];
+
+            // 13. Then, what we'll do is take a random item from the quotes array and update the innerHTML of the quote element with the quote text. 
+            this._$quote.innerHTML = this._quotes[Math.floor(Math.random() * this._quotes.length)];
+
+            // Notice, that we're only updating the part of the DOM that needs to be changed by individually selecting the quote element
         }
     }
+
+    // 14. Let's finish off, we'll use the disconnectedCallback method to get the interval that it won't continue to execute if the element has been removed from the DOM. 
     disconnectedCallback() {
         clearInterval(this._interval); 
     }
 }
 
-window.customElements.define('rw.random-quote', RwRandomQuote);
+window.customElements.define('rw-random-quote', RwRandomQuote);
