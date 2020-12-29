@@ -18,3 +18,5 @@
 ### **Some theory**
 
 - the HTML input spec hs only been implemented in Chrome which means to consume this component in anothe browser you'll need to use the HTML input Polyfill. Part of the work component.js suite of Polyfills. The workcomponents.js
+
+:)
