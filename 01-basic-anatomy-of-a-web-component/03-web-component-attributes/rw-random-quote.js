@@ -54,16 +54,25 @@ class RwRandomQuote extends HTMLElement {
             // 2. It will first cancel any variable instances using the clear interval method.
             clearInterval(this._interval)
         }
+
         // 3. If value is greater than 0 it will configure a new interval.
         if (value > 0) {
             // 4. we're reusing the code from the previous exercise althoug instead of writing 1000 as parameter, now we're just writing down "value".
             this._interval = setInterval(() => this._render(), value);
         }
     }
+
+    // 6. If we want to see the attribute changes we need to specify the observedAttributes method and provide an array of attributes we want to observe. 
     static get observedAttributes() {
+
+        // 7. In this case, It's going to be the interval attribute
         return ['interval']; 
     }
+
+    //8. Next, using the attributeChangedCallback can now be informed when the interval attribute value gets modified. 
+
     attributeChangedCallback(name, oldValue, newValue) {
+        // 9. When the interval attribute gets updated, the attribute change callback will get executed and then we can now use the new value variable to call our set interval method with the new value. 
         this._setInterval(newValue);
     }
 
