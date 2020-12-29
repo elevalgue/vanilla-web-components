@@ -1,3 +1,6 @@
+<!-- 1. Let's create the template -->
+<!-- 2. Add some content and CSS -->
+
 <template>
   <style>
     p {
@@ -8,14 +11,31 @@
 </template>
 
 <script>
+  // 3. Create the custom element of our web component.
+
+  // 4. In the constant called owner we'll store the reference to the owner document of this scrip.
   const $owner = (document.currentScript || document.currentScript)
     .ownerDocument;
+  // We need to know this so we can grab the template element we have just created.
+  // To access the owner document we can simply reference "document.currentscript.ownerdocument" which will give us the contents of the current file.
+
+  // 5. This Polyfill doesn't patch the current script property, but instead offers an alternative property underscore current scripts which we'll need to use if we want this component to function with the Polyfill. We can simply add that in using AND OR statement. I'll now create another constant which stores a reference using the standard currently selected method on the only document object to  select the template we've just created.
+
   const $template = $owner.querySelector('template');
   class MyComponent extends HTMLElement {
+    // 6. Without template ready to go, we can now create the class for our custom element. I'll call the class MyComponent which will extends the HTML element interface.
+
     connectedCallback() {
+      // 7. Within the connectedCallback method we can attach the template to the custom element.
+
+      // 8. Firstly, we'll need to import the contents of the template using the document.importNode method.
       const $content = document.importNode($template.content, true);
+
+      // 9. We can use this.appendchild to add the template contents as childred ti the Component custom element.
       this.appendChild($content);
     }
   }
+
+  // 10. We register our custom element with a browser using the customelements.define method specifying the element tag name and the class we've just created.
   window.customElements.define('my-component', MyComponent);
 </script>
