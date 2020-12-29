@@ -5,7 +5,8 @@
 
 ## **Method 1: HTML Import Advantages**
 
-- Automatic de-duplication of imports
+- Automatic de-duplication of imports. This means that, if you include the same component in multiple places throughout your application, it won't get included more than once. This means it's easy to ensure you'll always have the component when you need it but you don't need to worry about it being included more than it should be
+
 - Writing HTML & CSS is more natural and IDE support isn't an issue
 
 ## **Method 1: HTML Import Disadvantages**
