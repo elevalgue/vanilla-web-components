@@ -1,7 +1,3 @@
-// 
-
-
-
 class RwRandomQuote extends HTMLElement {
 
     
@@ -38,7 +34,10 @@ class RwRandomQuote extends HTMLElement {
         `;
 
         this._$quote = this.querySelector('#quote');
-        this._interval = setInterval(() => this._render(), 10000);
+        // 5. To access this element attribute we can use the getAttribute method. We call the setInterval method from the connectedCallback with any value from the interval attribute.
+        // This way if there's an initial interval attribute specified in a set interval, will be configured with the specified value.
+        // Let's jump over to index.html
+        this._setInterval = (this.getAttribute('interval'));
         this._render();
     }
 
@@ -47,6 +46,27 @@ class RwRandomQuote extends HTMLElement {
             this._$quote.innerHTML = this._quotes[Math.floor(Math.random() * this._quotes.length)];
         }
     }
+
+    // 1. The first thing is to create a custom method called SetInterval. This will give us a reusable way to update the render interval.
+    // This method will take the interval value in miliseconds. 
+    _setInterval(value) {
+        if (this._interval !== null) {
+            // 2. It will first cancel any variable instances using the clear interval method.
+            clearInterval(this._interval)
+        }
+        // 3. If value is greater than 0 it will configure a new interval.
+        if (value > 0) {
+            // 4. we're reusing the code from the previous exercise althoug instead of writing 1000 as parameter, now we're just writing down "value".
+            this._interval = setInterval(() => this._render(), value);
+        }
+    }
+    static get observedAttributes() {
+        return ['interval']; 
+    }
+    attributeChangedCallback(name, oldValue, newValue) {
+        this._setInterval(newValue);
+    }
+
     disconnectedCallback() {
         clearInterval(this._interval); 
     }
