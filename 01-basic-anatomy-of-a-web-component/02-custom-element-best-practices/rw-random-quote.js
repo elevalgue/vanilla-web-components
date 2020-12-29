@@ -1,7 +1,6 @@
 // In this demo we're going to create a random quote component which will print out a random quote every 10 seconds.
 
 // 1. First of all we're creating the class and defining the custom element. 
-
 class RwRandomQuote extends HTMLElement {
 
     // 2. Create the class constructot calling super
@@ -21,7 +20,6 @@ class RwRandomQuote extends HTMLElement {
         // We can do this with any variable that holds a reference to a DOM element so it's easy to see what type of data you are dealing with. By looking at that variable, you'll know instantly that you'll have access to methods like queryselector or the methods and properties at least part of the HTML element interface.
 
         // 5. Let's add an interval variable that will store the interval instance used to update the quote every ten seconds
-
         this._interval = null; 
     }
 
