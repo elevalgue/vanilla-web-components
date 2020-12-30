@@ -5,61 +5,55 @@ This is a Web Component skeleton which you can be used as a starting point for a
 - 1. It shows how to declare private variables
 
 <p align="center"> 
-<img src="images/private-variables-2.png" 
-widht="40" height="40"> 
-</p>
-<!-- <img src="images/private-variables.png" widht="40" height="40"> -->
-
-- 2. How to create a Shadow Root
-
-<p align="center"> 
-<img src="images/create-shadow-root.png" 
-widht="40" height="40"> 
+<img src="images/private-variables-2.png"> 
 </p>
 
-- 3. How to add a initial template
+- 2. Create a Shadow Root for your components
 
 <p align="center"> 
-<img src="images/initial-template.png" 
-widht="60" height="60"> 
+<img src="images/create-shadow-root.png"> 
 </p>
 
-- 4. To store a reference to s
+- 3. Where to add an initial template
 
 <p align="center"> 
-<img src="images/store-reference.png" 
-widht="120" > 
+<img src="images/initial-template.png"> 
+</p>
+
+- 4. To store a reference to important elements for later use and the prefix DOM elements with a dollar sign
+
+<p align="center"> 
+<img src="images/store-reference.png"> 
 </p>
 
 - 5. How to declare private methods
 
 <p align="center"> 
-<img src="images/private-methods.png" 
-widht="60" height="60"> 
+<img src="images/private-methods.png"> 
 </p>
 
-- 6. And the best practice for selectively updating
+- 6. And the best practice for selectively updating template content
 
 <p align="center"> 
-<img src="images/best-practice.png" widht="50" > 
+<img src="images/best-practice.png"> 
 </p>
 
-- 7. How to observe certain attribute changes
+- 7. How to observe certain attribute changes and react to them
 
 <p align="center">
-<img src="images/attribute-changes.png" widht="50" height="50" > 
+<img src="images/attribute-changes.png"> 
 </p>
 
-- 8. How to create an API
+- 8. How to create an API for your component with properties
 
 <p align="center"> 
-<img src="images/create-api.png" widht="50" height="50" > 
+<img src="images/create-api.png"> 
 </p>
 
-- 9. Best practices for elements and class naming
+- 9. Best practices for element and class naming
 
 <p align="center">
-<img src="images/best-practices-2.png" widht="50" height="50" > 
+<img src="images/best-practice-2.png"> 
 </p>
 
 <p align="center"> 
