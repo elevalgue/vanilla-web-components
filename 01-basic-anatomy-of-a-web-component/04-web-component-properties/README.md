@@ -10,11 +10,13 @@ the attached variable to true so we know when the element has been added to the 
 Currently, this component is just displaying some static data which in practice is pretty useless. How can we create an API so someone using this component in their app can not only provide it with a new question and answers but also, programmatically select the selected answer. This is were properties come in.
 First and foremost we want it to be possible to dynamically add a question and a set of answers so we'll remove the static data.
 
+
+![screenshot](screenshot.png)
+
 - We'll see how to create an API four our components using properties.
 - We'll describe the difference between properties and attributes.
 - We'll demostrate how we can allow data to be pushed into our component (This means, using setter methods to retrieve data).
 - And to how getter methods can be used to allow data inside your components to be retrieved externally (Using getter methods to provide data).
 
-![screenshot](screenshot.png)
 
 :)
