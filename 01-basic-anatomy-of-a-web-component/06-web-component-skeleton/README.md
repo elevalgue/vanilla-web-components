@@ -35,7 +35,7 @@ widht="120" >
 
 <p align="center"> 
 <img src="images/private-methods.png" 
-widht="30" height="30"> 
+widht="60" height="60"> 
 </p>
 
 - 6. And the best practice for selectively updating
