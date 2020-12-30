@@ -1,11 +1,11 @@
-# **Custom Element Best Practices **
+# **Custom Element Best Practices**
 
 - Class and element naming conventions
 - Implementing custom methods
 - Defining local variables
 - Updating the component template
 
-# **Some tips: **
+# **Some tips:**
 
 - Use CamelCase
 - The names might be short
