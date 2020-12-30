@@ -15,6 +15,6 @@ First and foremost we want it to be possible to dynamically add a question and a
 - We'll demostrate how we can allow data to be pushed into our component (This means, using setter methods to retrieve data).
 - And to how getter methods can be used to allow data inside your components to be retrieved externally (Using getter methods to provide data).
 
-![image-screenshot](./image-screenshot.png)
+![screenshot](screenshot.png)
 
 :)
