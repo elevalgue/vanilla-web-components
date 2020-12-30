@@ -41,7 +41,7 @@ widht="60" height="60">
 - 6. And the best practice for selectively updating
 
 <p align="center"> 
-<img src="images/best-practice.png" widht="50" height="50" > 
+<img src="images/best-practice.png" widht="50" > 
 </p>
 
 - 7. How to observe certain attribute changes
