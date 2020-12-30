@@ -5,7 +5,7 @@
 - Defining local variables
 - Updating the component template
 
-# **Custom Element Best Practices **
+# **Some tips: **
 
 - Use CamelCase
 - The names might be short
