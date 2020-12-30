@@ -5,7 +5,7 @@ This is a Web Component skeleton which you can be used as a starting point for a
 - 1. It shows how to declare private variables
 
 <p align="center"> 
-<img src="images/private-variables.png" 
+<img src="images/private-variables-2.png" 
 widht="40" height="40"> 
 </p>
 <!-- <img src="images/private-variables.png" widht="40" height="40"> -->
