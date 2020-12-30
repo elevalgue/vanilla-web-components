@@ -15,7 +15,8 @@ class RwComponentSkeleton extends HTMLElement {
     }
     // Private methods
     _render() {
-        this._$text.innerText = "...is awesome!"; // Selectively update only parts of the template which need to change
+        this._$text.innerText = "...is awesome!";
+        // Selectively update only parts of the template which need to change
     }
     // Observe attribute changes
     static get observedAttributes() {
@@ -23,7 +24,6 @@ class RwComponentSkeleton extends HTMLElement {
     }
     // React to attribute changes
     attributeChangedCallback(name, oldValue, newValue) {
-        // Do stuff
     }
     // Use setters and getters to create an API for your component
     set property1(data) {
