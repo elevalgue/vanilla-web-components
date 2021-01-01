@@ -1,4 +1,4 @@
-# **Creating the Fooundation of the Star**
+# **Creating the Foundation of the Star**
 
 ## **In this demo:**
 
