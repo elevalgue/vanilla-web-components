@@ -16,7 +16,7 @@ will do or has already created a component with that name. This means that your 
 - This is an unwritten rule, but prefixing a variable or method with an underscore means that it's private and probably shouldn't be used externally
 
 
-< img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif">
+<img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif">
 
 
 :)
