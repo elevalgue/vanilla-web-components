@@ -26,5 +26,7 @@ together four web standards. **These web standards are custom elements, shadow D
 components with a different capability. They are almost like web component superpowers. This module will guide you through using each of these web standards 
 outside of the web component eco system, because it is important to understand how each functions independently.
 
+:)
+
 
 <img src="https://media.giphy.com/media/rdma0nDFZMR32/giphy.gif">
