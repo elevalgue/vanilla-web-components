@@ -1,6 +1,7 @@
 # **The Number input**
 
 - Does more than just take a number from the user
+- The number input implements the [HTMLInputelEment](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement)interface, which provide a large API including a variety of properties and methods. In context of our Rating Star Component, we are only interested in the **disable state**, **the value attribute**, **the value property** and when the **change event is fired**.
 
 ## **In this demo:**
 
