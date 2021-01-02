@@ -11,12 +11,14 @@ class EvgStarRating extends HTMLElement{
         // 1. Start out by declaring the private value variable, which will hold the element in its current value.
         this._value = 0;
     }  
+    
     // 4. The setter method, as always, will first check to see if the value provided is actually different to the current value. If it is, update the current value and then call the render method to update the template. 
     set value(value) {
         if (this._value === value) return;
         this._value = value;
         this._render();
     }
+    
     // 5. The getter method simply returno the current value. 
     get value() {
         return this._value;
@@ -66,6 +68,7 @@ class EvgStarRating extends HTMLElement{
           unicode-bidi: bidi-override;
           direction: rtl;
         }
+
         /* Credit: https://css-tricks.com/star-ratings/ */
         .container .bottom > span:hover,
         .container .bottom > span:hover ~ span {               
@@ -75,13 +78,16 @@ class EvgStarRating extends HTMLElement{
         :host([disabled]) .container {
             cursor: inherit;
         }
+
         :host([disabled]) .container .top {
             display: block;
         }
+
         :host([disabled]) .container .bottom > span:hover,
         :host([disabled]) .container .bottom > span:hover ~ span {
             color: inherit;
         }
+
         </style>
         <div class="container">
             <div class="top">
@@ -92,6 +98,7 @@ class EvgStarRating extends HTMLElement{
             </div>
         </div>
     `;
+        
         this._disabled = (this.getAttribute('disabled') !== null);
         // 2. Then, in the connector callback, we'll create a reference to the top element, so we can update its width within the render method. We do that by simply using the query selector method on the reference to the shadow root to pull out the element with the top class. 
         this._$stop = this._root.querySelector('.top')
@@ -103,9 +110,11 @@ class EvgStarRating extends HTMLElement{
             this._$stop.style.width = ((this._value * 10) * 2) + '%';
         }
     }
+    
     static get observedAttributes() {
         return ['disabled'];
     }
+    
     attributeChangedCallback(name, oldValue, newValue) {
         if (oldValue !== newValue) {
             switch (name) {
@@ -115,4 +124,5 @@ class EvgStarRating extends HTMLElement{
         }
     }
 }
+
 window.customElements.define('evg-star-rating', EvgStarRating)
