@@ -35,10 +35,12 @@ class RwRandomQuote extends HTMLElement {
                     border: dotted 1px #999;
                     padding: 20px;
                 }
+
                 .rw-container h1 {
                     font-size: 20px;
                     margin: 0;
                 }
+
             </style>
             <div class="rw-container">
                 <h1>Random Quote:</h1>
