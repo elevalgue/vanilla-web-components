@@ -7,12 +7,18 @@ class EvgStarRating extends HTMLElement{
         this._$stop = null;
         this._$bottom = null;
         // Data
-        this._disabled = null; 
+        this._disabled = false; 
         this._value = 0;
+
+        // 3. we need to declare a private variable called touched. We'll then set this variable to true within the value setter
+        this._touched = false; 
     }  
 
     set value(value) {
+        
         if (this._value === value) return;
+        // 4. so that if a user makes the selection or a value set by the value property, we'll know they want to ignore any value attribute changes. This is why we don't use the value property in th connector callback for the value attribute. 
+        this._touched = true;
         this._value = value;
         this._render();
     }
@@ -105,6 +111,16 @@ class EvgStarRating extends HTMLElement{
                 }
             }
         });
+
+        // 1. The 1st thing to do is check the initial value of the value attribute withing the connector callback.
+        const_initialValue = this.getAttribute('value');
+
+        // 2. If there's a value, then update the private variable and call the render method.
+        // There's a reason why we don't just use the value property here, which you'll see shortly
+        if (initialValue !== null) {
+            this._value = initialValue;
+            this._render();
+        }
     }
  
     _render() {
@@ -114,7 +130,9 @@ class EvgStarRating extends HTMLElement{
     }
 
     static get observedAttributes() {
-        return ['disabled'];
+
+        // 5. Next, we'll add an additional string to the return value of the observer distributes method, specifying we want to observe changes for 
+        return ['disabled', 'value'];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -122,9 +140,23 @@ class EvgStarRating extends HTMLElement{
             switch (name) {
                 case 'disabled':
                     this._disabled = (newValue !== null);
+                    break;
+                
+                // 6. And then we add another case to the switch statement.
+
+                case 'value':
+                    // 7. We're at the touched value is false, we'll take the attribute value 
+                    ç
+                    if (this._touched === false) {
+                        this._value = newValue
+                        // and update the private variable calling the render method and that completes out star rating component. 
+                        this._render();
+                    }
+                    break;
             }
         }
     }
 }
+
 window.customElements.define('evg-star-rating', EvgStarRating)
 
