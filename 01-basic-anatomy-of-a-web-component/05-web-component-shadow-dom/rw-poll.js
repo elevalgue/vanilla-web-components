@@ -18,6 +18,7 @@ class RwPoll extends HTMLElement {
         // This is where we use the root variable. In the browser 
         this._root = this.attachShadow({ "mode": "open" });
     }
+    
     connectedCallback() {
         this._attached = true;
 
@@ -26,17 +27,20 @@ class RwPoll extends HTMLElement {
         .rw-poll-container {
             background-color: #333;
         }
+
         .rw-poll-container h3 {
             margin: 0;
             padding: 0 20px;
             color: #FFF;
             line-height: 50px;
         }
+
         .rw-poll-container ul {
             list-style: none;
             margin: 0;
             padding: 0;
         }
+
         .rw-poll-container ul li {
             padding: 0 20px;
             line-height: 50px;
@@ -45,14 +49,18 @@ class RwPoll extends HTMLElement {
             border-top: none;
             cursor: pointer;
         }
+
         .rw-poll-container ul li:hover {
             background-color: #CCC;
         }
+
         .rw-poll-container ul li.selected {
             background-color: #5cb85c;
             color: #FFF;
         }
+
         </style>
+
         <div class="rw-poll-container">
         <h3 id="question"></h3>
         <ul id="answers"></ul>
@@ -72,8 +80,10 @@ class RwPoll extends HTMLElement {
                 }
             });
         });
+        
         this._render();
     }
+    
     _render() {
         if (this._attached && this._data !== null) {
             this._$answers.innerHTML = "";
@@ -85,14 +95,17 @@ class RwPoll extends HTMLElement {
             });
         }
     }
+    
     set data(data) {
         if (this._data === data) return;
         this._data = data;
         this._render();
     }
+    
     get data() {
         return this._data;
     }
+    
     set selected(index) {
         const $answer = this._$answers.querySelector(`li:nth-child(${index + 1})`);
         if ($answer !== null) {
@@ -103,14 +116,17 @@ class RwPoll extends HTMLElement {
             this._selected = index;
         }
     }
+    
     get selected() {
         return this._selected;
     }
+    
     set data(data) {
         if (this._data === data) return; 
         this._data = data;
         this._render();
     }
+    
     get data() {
         return this._data;
     }
@@ -125,8 +141,10 @@ class RwPoll extends HTMLElement {
             this._selected = index;
         }
     }
+    
     get selected() {
         return this._selected;
     }
 }
+
 window.customElements.define("rw-poll", RwPoll);
