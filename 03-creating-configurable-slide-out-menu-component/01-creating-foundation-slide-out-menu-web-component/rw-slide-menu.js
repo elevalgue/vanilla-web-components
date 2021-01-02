@@ -30,6 +30,10 @@ class RwSlideMenu extends HTMLElement {
     // and use the transition to ensure the sliding effect is animated
     // the will-change transform property id added here to promote this element to a ew layer. 
 
+    // 9. The CSS for the title and close button is pretty self-explanatory
+
+    // 10. Finally we add some CSS for when the frame has an open class, which resets the pointer-event, allowing the frame and nav element to be clicked, and also removes the transform on the nav element, sliding it back in. 
+
     connectedCallback() {
         this._root.innerHTML = `
 
@@ -53,6 +57,41 @@ class RwSlideMenu extends HTMLElement {
             will-change: transform;
             transition: transform 300ms ease-in;
             box-shadow: 1px 0 3px rgba(51,51,51,0.25);
+        }
+
+        .title { 
+            display: flex;
+            flex-direction: row;
+            min-height: 3.2em;
+            font-size: 1.5em;
+            backgorung-color: #F1F1F1;
+            color: #666;
+        }
+
+        .title .title-content {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            padding-left: 1em;
+        }
+
+        .close {
+            flex-basis: 100px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            user-select: none;
+        }
+
+        .frame .open {
+            pointer-events: auto;
+            background-color: rgba(0, 0, 0, 0.25);
+        }
+
+        .frame.open .container {
+            transform: none; 
         }
         </style>
         
