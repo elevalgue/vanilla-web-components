@@ -16,3 +16,20 @@
 - We now have the foundation of our slide-out menu components, and can start adding some features.
 - So, we're going to implement the red and blue theme for the component, which will be selectable by theme attribute.
 - We'll do this using only CSS, thanks to the :host selector.
+
+### **Some more info:**
+
+- (6) If we open the project in the browser we can try out these themes.
+- (7) We're going to need to simulate opening the menu again using the open class
+
+<img src="div-frame-open.png">
+
+- (8) Once we've done that, we can then specify the theme attributes on the custom element, starting with red, we can see it gets applied.
+
+<img src="menu-theme-red.png">
+
+- (9) And then changing the changing the value to blue, we can see that instantly the blue theme gets applied.
+
+<img src="menu-theme-blue.png">
+
+- This demostrates that using the :host selector can really simplify adding theming and styling to your component, instead of falling back to a more complicated JavaScript implementation.

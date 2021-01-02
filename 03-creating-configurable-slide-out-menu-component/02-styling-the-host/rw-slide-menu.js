@@ -7,6 +7,12 @@ class RwSlideMenu extends HTMLElement {
         // Data 
         this._open = false; 
     }
+    // 1. The only style we're going to apply based on the theme, to start with, is going to be the title, so we'll first use the :host selector. we'll use square brackets so we know we're dealing with attributes, then specify the theme attributes and the value we'd like to specify, in this case red.
+    // 2. Then specifying the title class, 
+    // 3. We can specify the appropiate background-color,
+    // 4. and color 
+
+    // 5. I'll also do exactly the same thing, except for the blue theme 
 
     connectedCallback() {
         this._root.innerHTML = `
@@ -68,6 +74,16 @@ class RwSlideMenu extends HTMLElement {
             transform: none; 
         }
 
+        :host([theme='red']).title {
+            background-color: #E23F24
+            color: white; 
+        }
+
+        :host([theme='blue']).title {
+            background-color: #E23F24
+            color: white; 
+        }
+
         </style>
         
         <div class="frame">
@@ -89,3 +105,9 @@ class RwSlideMenu extends HTMLElement {
 }
 
 window.customElements.define('rw-slide-menu', RwSlideMenu);
+
+
+// 6. If we open the project in the browser we can try out these themes. 
+// 7. We're going to need to simulate opening the menu again using the open class
+// 8. Once we've done that, we can then specify the theme attributes on the custom element, starting with red, we can see it gets applied.
+// 9. And then changing the changing the value to blue, we can see that instantly the blue theme gets applied. 
