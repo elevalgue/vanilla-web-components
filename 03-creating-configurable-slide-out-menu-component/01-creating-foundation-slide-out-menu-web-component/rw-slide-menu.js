@@ -93,6 +93,7 @@ class RwSlideMenu extends HTMLElement {
         .frame.open .container {
             transform: none; 
         }
+
         </style>
         
         <div class="frame">
@@ -115,3 +116,5 @@ class RwSlideMenu extends HTMLElement {
 
 // 2. Defined the custom element
 window.customElements.define('rw-slide-menu', RwSlideMenu);
+
+// 11. Now we have the very basic foundation to our slide-in menu component
