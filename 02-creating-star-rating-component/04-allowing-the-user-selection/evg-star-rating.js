@@ -92,7 +92,28 @@ class EvgStarRating extends HTMLElement{
         </div>
     `;
         this._disabled = (this.getAttribute('disabled') !== null);
-        this._$stop = this._root.querySelector('.top')
+        this._$stop = this._root.querySelector('.top');
+
+        // 1. We're going to need to listen for  click on the bottom stars, so first, we'll need to create a reference to the bottom element. Again, we do that by using the query select method on the reference to the Shadow Root, selecting the class 
+
+        this._$bottom = this._root.querySelector('.bottom');
+
+        // 2. Then, by adding a click event handle to that element, we'll know one of the stars has been clicked.
+        
+        this._$bottom.addEventListener('click', (event) => {
+
+            // 3. We don't want to perform any action if the element is in disabled mode, so we'll first ensure that the disabled value isn't set to true. Then, we'll make sure that the element has a dataset value, i.e. this is one of the bottom star elements. 
+
+            if (this._disabled !== true && event.target.dataset.value !== undefined) {
+                
+                // 4. Finally is the current value is not the same as the just selected value, we'll then dispatch a  change event and aldo we'll set the value property to the new selected value.  
+                
+            if (this._value !== event.target.dataset.value) {
+                this.dispatchEvent(new Event('change'));
+                this.value = event.target.dataset.value;
+                }
+            }
+        });
     }
  
     _render() {
@@ -104,7 +125,7 @@ class EvgStarRating extends HTMLElement{
     static get observedAttributes() {
         return ['disabled'];
     }
-    
+
     attributeChangedCallback(name, oldValue, newValue) {
         if (oldValue !== newValue) {
             switch (name) {
@@ -115,3 +136,7 @@ class EvgStarRating extends HTMLElement{
     }
 }
 window.customElements.define('evg-star-rating', EvgStarRating)
+
+// 5. In the browser, we'll first attach an event listener for the change event on our star rating component. Then when we make a selection, we can see that, that event is getting fired and that selection is being made. 
+
+// The final implementation detail is that we male the same selection twice, the change event isn't fired because the value's not changed.
