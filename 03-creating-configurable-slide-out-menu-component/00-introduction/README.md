@@ -26,3 +26,7 @@
 - The nav element has a will-change transform property, which promotes the nav element to separate layer. This prevents the browser from redrawing the rest of the page when the menu is slid in or out. This will increase the animation performance, especially in low-cost or older mobile devices.
 - Because the frame element is an overlay to the entire browser viewport, we need to stop that element from being clickable, otherwise a user wouldn't be able to interact with the application behind the frame element when the slide-out menu is closed.
 - We can do this, using the pointer-events CSS property and setting it to none. Then when the menu's opened, we can set this property back to aouto, which will then allow the user to interact with the menu and backdrop.
+
+<img src="https://media.giphy.com/media/3o7aTJXuMsuSkBk2hG/giphy.gif">
+
+:)
