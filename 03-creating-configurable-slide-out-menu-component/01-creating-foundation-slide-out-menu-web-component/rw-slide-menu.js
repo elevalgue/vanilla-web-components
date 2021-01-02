@@ -23,8 +23,12 @@ class RwSlideMenu extends HTMLElement {
     // This CSS ensures the frame covers the entire viewport, 
     // sets pointer-events to none, so the user can click through it,/ 
     // sets a high z - index, so it's all above all other elements, 
-    // and configures a background-color animation used for the backdrop.// Next is the nav element, which has the container class.We use the translateX transform to slide if off the screen by default, 
+    // and configures a background-color animation used for the backdrop.
+    
+    // 8. Next is the nav element, which has the container class.
+    // We use the translateX transform to slide if off the screen by default,
     // and use the transition to ensure the sliding effect is animated
+    // the will-change transform property id added here to promote this element to a ew layer. 
 
     connectedCallback() {
         this._root.innerHTML = `
@@ -39,6 +43,16 @@ class RwSlideMenu extends HTMLElement {
             pointer-events: none;
             z-index: 1000;
             transition: background-color 300ms ease-in;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 400px;
+            background: #FFF;
+            height: 100%;
+            will-change: transform;
+            transition: transform 300ms ease-in;
+            box-shadow: 1px 0 3px rgba(51,51,51,0.25);
         }
         </style>
         
