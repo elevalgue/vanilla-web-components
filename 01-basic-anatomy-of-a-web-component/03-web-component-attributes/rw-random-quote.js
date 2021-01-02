@@ -1,6 +1,5 @@
 class RwRandomQuote extends HTMLElement {
-
-    
+  
     constructor() {
         super();
         this._quotes = [
@@ -13,7 +12,6 @@ class RwRandomQuote extends HTMLElement {
     }
 
     connectedCallback() {
-
         this.innerHTML = `
             <style>
                 .rw-container {
@@ -22,11 +20,14 @@ class RwRandomQuote extends HTMLElement {
                     border: dotted 1px #999;
                     padding: 20px;
                 }
+
                 .rw-container h1 {
                     font-size: 20px;
                     margin: 0;
                 }
+
             </style>
+
             <div class="rw-container">
                 <h1>Random Quote:</h1>
                 <p>"<span id="quote"></span>"</p>
@@ -34,6 +35,7 @@ class RwRandomQuote extends HTMLElement {
         `;
 
         this._$quote = this.querySelector('#quote');
+        
         // 5. To access this element attribute we can use the getAttribute method. We call the setInterval method from the connectedCallback with any value from the interval attribute.
         // This way if there's an initial interval attribute specified in a set interval, will be configured with the specified value.
         // Let's jump over to index.html
@@ -70,7 +72,6 @@ class RwRandomQuote extends HTMLElement {
     }
 
     //8. Next, using the attributeChangedCallback can now be informed when the interval attribute value gets modified. 
-
     attributeChangedCallback(name, oldValue, newValue) {
         // 9. When the interval attribute gets updated, the attribute change callback will get executed and then we can now use the new value variable to call our set interval method with the new value. 
         this._setInterval(newValue);
