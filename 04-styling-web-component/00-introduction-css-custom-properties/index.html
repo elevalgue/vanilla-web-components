@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Styling Web Components</title>
   </head>
+  <!-- 1. To demostrate CSS custom properties we'll create 4 squares in the center of the page -->
+
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      width: 505px;
+      margin: 50px auto;
+    }
+
+    .box {
+      width: 250px;
+      height: 250;
+      border: solid 1px #ccc;
+      box-sizing: border-box;
+      display: inline-block;
+    }
+  </style>
 
   <body>
     <div class="container">
