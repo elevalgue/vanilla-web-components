@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="rw-slide-menu.js"></script>
+    <title>
+      Creating a configurable Slide Out Menu Component - Styling the host
+    </title>
+  </head>
+
+  <body>
+    <!-- Include the custom element into index.html -->
+    <rw-slide-menu id="menu"></rw-slide-menu>
+
+    <!-- 24. Before of opening this in the browser to see the functionality we've just added a few buttons, one to open the menu and one to close the menu -->
+    <div class="controls">
+      <!-- 25. Both of these buttons are all within a division element with a class of controls -->
+      <button class="btn" data-action="open">Open Menu</button>
+      <button class="btn" data-action="close">close Menu</button>
+    </div>
+    <script>
+      // 26. Then we add click eventListener to the controls element, so I can determine which button has been pressed.
+      const $controls = document.querySelector('.controls');
+      const $menu = document.getElementById('menu');
+      $controls.addEventListener('click', (event) => {
+        switch (event.target.dataset.action) {
+          case 'open':
+            // 27. If the opened menu button has been pressed, we then set the menu open property to true.
+            $menu.open = true;
+            break;
+          case 'close':
+            // 28. If it's the close button, then I set the property to false
+            $menu.open = false;
+            break;
+        }
+      });
+      // 29. We've also add some eventListeners to the menu itself
+      // 30. One for menu opened
+      $menu.addEventListener('menu-opened', (event) => {
+        console.log('MENU OPENED!', event);
+      });
+      // 31. One for menu closed
+      $menu.addEventListener('menu-closed', (event) => {
+        console.log('MENU CLOSED!', event);
+      });
+    </script>
+  </body>
+</html>
