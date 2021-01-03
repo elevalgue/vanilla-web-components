@@ -33,3 +33,5 @@
 - We'll add slots to the component template for both the menu content and the menu title.
 - We'll also add some default style for slotted content
 - And finally, we'd specify some fallback text for the title slot, to ensure there's always a title for the menu.
+
+<img src="https://media.giphy.com/media/mCRJDo24UvJMA/giphy.gif" width="200">
