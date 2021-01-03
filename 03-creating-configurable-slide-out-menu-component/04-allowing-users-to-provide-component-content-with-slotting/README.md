@@ -47,6 +47,40 @@
 <img src="slotted-revealed-in-light-dom.png" width="400">
 </p>
 
+- The slotted content looks pretty ugly in its current form. The user can style this contentn however they like, because it's still in the **Light DOM**, but as a component authors, we can still add some default styles, so the slotted content look good straight of the box.
+
+- Within the **Shadow DOM** we have a new CSS pseudo selector available to us, which will allow us to add style specifically to slotted content. We can specify tag names. In this example, we're styling all slotted anchor elements whose parent has the class content-slot. In the code we've just written, this is slot element.
+
+<p align = center>
+<img src="content-slot.png" width="300">
+</p>
+
+- We can use other pseudo selectors, such as he **hover selector** and we also specify classes.
+
+<p align = center>
+<img src="hover-selector.png" width="300">
+</p>
+
+- This all seems great and incredibly useful, but there are limitations:
+
+- You can style top-level items. If you were to do someting like this, it just wouldn't work.
+
+<p align = center>
+<img src="limitations.png" width="300">
+</p>
+
+- It's also important to understand that user-specified style will always take precedence over slotted style which is added inside the Shadow DOM. In this example, on the **left** we have added our slotted content style added within the Shadow DOM of our Web Component, and on the **right** we have the user-specified style for the slotted content they added to our component. The user-specified styling would always win. Now we're aware of the slotted pseudo-selector we can use it to add some default style to the slotted anchor elements.
+
+<p align = center>
+<img src="shadow-dom-light-dom.png" width="300">
+</p>
+
+- Back in the browser we open the menu, we can see that it looks so much better. The default styles have been applied to the slotted anchor elements
+
+<p align = center>
+<img src="browser-2.png" width="300">
+</p>
+
 <img src="https://media.giphy.com/media/mCRJDo24UvJMA/giphy.gif" width="200">
 
 :)
