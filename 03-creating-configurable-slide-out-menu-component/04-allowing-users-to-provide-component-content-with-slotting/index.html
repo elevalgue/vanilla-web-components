@@ -11,7 +11,14 @@
 
   <body>
     <!-- Include the custom element into index.html -->
-    <rw-slide-menu id="menu"></rw-slide-menu>
+    <!-- We'll add some content that we want to slotted inside the component -->
+    <!-- As we've been building a menu, it only seems appropiate that we'll add some anchor tags -->
+    <rw-slide-menu id="menu">
+      <a href="#">"One"</a>
+      <a href="#">"Two"</a>
+      <a href="#">"Three"</a>
+      <!-- Next we'll open the browser and we can see with the menu open that the 3 anchor tags have been placed in the appropiate place-->
+    </rw-slide-menu>
     <div class="controls">
       <button class="btn" data-action="open">Open Menu</button>
       <button class="btn" data-action="close">close Menu</button>
