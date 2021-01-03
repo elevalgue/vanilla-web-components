@@ -110,8 +110,14 @@ class RwSlideMenu extends HTMLElement {
 
                     <a class="close" data-closed="true">&#10006;</a>
                 </div>
+
+            // 1. We'll start by replacing the static content we added earlier with a slot element.
                 <div class="content>
-                    <a href="#">Menu Item One</a>
+
+                // 2. We're going to give this element a class, so we can style the slotted content
+                // 3. The slot element allows the component author to decide where the slotted content is placed with inside the template in the Shadow Root. 
+                
+                   <slot class="content-slot"></slot>
                 </div>
             </nav>
         </div>
