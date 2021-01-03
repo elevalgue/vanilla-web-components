@@ -14,6 +14,9 @@
     <!-- We'll add some content that we want to slotted inside the component -->
     <!-- As we've been building a menu, it only seems appropiate that we'll add some anchor tags -->
     <rw-slide-menu id="menu">
+      <!-- 5. Let's add some slotted content in our HTML. -->
+      <!-- we'll add a h3 which is appropiate for a title and that way we specify for it to go in the additional slot element is by giving it a slot attribute and then specifying the name we chose. In this case, that's the title -->
+      <h3 slot="title">Nav Menu</h3>
       <a href="#">"One"</a>
       <a href="#">"Two"</a>
       <a href="#">"Three"</a>

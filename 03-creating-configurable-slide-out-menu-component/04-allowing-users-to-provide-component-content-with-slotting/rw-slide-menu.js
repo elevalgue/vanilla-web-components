@@ -116,6 +116,7 @@ class RwSlideMenu extends HTMLElement {
             <nav class="container">
                 <div class="title">
                     <div class="title-content">
+                    // 4. If we place our menu text with another slot element, except this time we give it a name, give it something meaninful, so in this case title, then what we can also do with slots is we can provide some default content, so that if a user doesn't specify a value, we have a reasonable default. We can demostrate that now by going to the browser. 
                         <slot name="title">Menu</slot>
                     </div>
                     <a class="close" data-close="true">&#10006;</a>

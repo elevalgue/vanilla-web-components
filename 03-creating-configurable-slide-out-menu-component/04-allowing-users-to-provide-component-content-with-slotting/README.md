@@ -75,12 +75,47 @@
 <img src="shadow-dom-light-dom.png" width="300">
 </p>
 
-- Back in the browser we open the menu, we can see that it looks so much better. The default styles have been applied to the slotted anchor elements
+- Back in the browser we open the menu, we can see that it looks so much better. The default styles have been applied to the slotted anchor elements.
 
 <p align = center>
 <img src="browser-2.png" width="300">
 </p>
 
+- When we swap to the red theme, we can see the hover style updates and the same for the blue theme.
+<p align = center>
+<img src="red-theme.png" width="300">
+<img src="blue-theme.png" width="300">
+</p>
+
+- To further illustrate the point about user-specified styles taking precedence over the slotted styling within the Shadow DOM, if I add some styling in the document which changes the anchor color to red, we'll be alble to see that this styling wins over the styling we added inside the component.
+
+<p align = center>
+<img src="user-specified-style.png" width="300">
+</p>
+
+- Currenty, in our slide-out menu Web Component, we have a single slot element. Any child elements will be projected at this location in the Shadow DOM. But what about having multiple places in your templates that you want to be able to project content into?
+
+<p align = center>
+<img src="single-slot-element.png" width="300">
+<img src="multiple-slots-element.png" width="300">
+</p>
+
+- With our slide-out menu component, we have that exact problem. Non only do we want users to be able to add menu content, we also want them to be able to specify the markup for the menu title. This is where name slots come in. To do this, it's actually really easy. If we place our menu text with another slot element, except this time we give it a name, give it something meaninful, so in this case title, then what we can also do with slots is we can provide some default content, so that if a user doesn't specify a value, we have a reasonable default. We can demostrate that now by going to the browser. And what we'll be able to see is that the menu text is still displayed, even though we haven't added any content to be slotted. And we can see inside the slot element, it's defaulted to the default text.
+
+<p align = center>
+<img src="no-slotted-content.png" width="300">
+</p>
+
+- Let's add some slotted content in our HTML. We'll add a h3 which is appropiate for a title and that way we specify for it to go in the additional slot element is by giving it a slot attribute and then specifying the name we chose. In this case, that's the title.
+
+- Back in the browser, we'll be able to see that the menu now holds our new slotted content.
+
+<p align = center>
+<img src="new-slotted-content.png" width="300">
+</p>
+
+</br>
+</br>
 <img src="https://media.giphy.com/media/mCRJDo24UvJMA/giphy.gif" width="200">
 
 :)
