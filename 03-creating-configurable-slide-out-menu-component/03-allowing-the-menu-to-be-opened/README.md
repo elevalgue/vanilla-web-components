@@ -2,6 +2,8 @@
 
 ## **In this demo:**
 
-### **Some more info:**
+- We'll define the open property, which will allow the menu to be toggled open and closed.
+- We'll ensure the menu is closed when the user clicks the backdrop or the close button.
+- We'll add the CSS which allows the user to disable the backdrop.
 
-<img src="div-frame-open.png">
+### **Some more info:**
