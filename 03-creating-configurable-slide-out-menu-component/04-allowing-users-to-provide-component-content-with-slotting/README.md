@@ -34,6 +34,19 @@
 - We'll also add some default style for slotted content
 - And finally, we'd specify some fallback text for the title slot, to ensure there's always a title for the menu.
 
+## **More info:**
+
+- we'll open the browser and we can see with the menu open that the 3 anchor tags have been placed in the appropiate place.
+<p align = center>
+<img src="browser.png" width="400">
+</p>
+
+- In the element explorer, when we drill down to where the slotted element is, we can see the projection at work.
+
+<p align = center>
+<img src="slotted-revealed-in-light-dom.png" width="400">
+</p>
+
 <img src="https://media.giphy.com/media/mCRJDo24UvJMA/giphy.gif" width="200">
 
 :)
