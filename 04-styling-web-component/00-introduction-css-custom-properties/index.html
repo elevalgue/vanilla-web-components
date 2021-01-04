@@ -12,6 +12,11 @@
     body {
       padding: 0;
       margin: 0;
+      /* 2. Let's write some CSS custom properties */
+      /* We can use CSS custom properties ti pierce the Shadow DOM, which is exactly that we'll be doing with our components  */
+      --primary--color: #a6d785;
+      --secondary-color: #999;
+      --border-color: #6d9350;
     }
 
     .container {
@@ -21,10 +26,22 @@
 
     .box {
       width: 250px;
-      height: 250;
+      height: 250px;
       border: solid 1px #ccc;
       box-sizing: border-box;
       display: inline-block;
+    }
+
+    .one,
+    .four {
+      background-color: var(--primary--color);
+      border-color: var(--border-color);
+    }
+
+    .two,
+    .three {
+      background-color: var(--secondary-color);
+      border-color: #333;
     }
   </style>
 
